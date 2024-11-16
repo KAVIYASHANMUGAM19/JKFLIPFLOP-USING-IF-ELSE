@@ -49,68 +49,38 @@ step-6 Run the program.
 
 
 **PROGRAM**
-
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-
+```
 module JKFLIPFLOP(q, qb,j,k,clock,reset);
-    
     input j,k,clock,reset;
-    
     output reg q, qb;
-	 
 always @ (posedge (clock))
-
     begin 
-        
         if (!reset)
-        
             begin
-            
                q <= q;
-               
                qb <=qb;
-           
-            end               
+           end
 else
-   
-   begin
-	   
-    if(j==0 && k==0)
-		  
-     begin
-			
-   q<=q;
-			
-   qb<=qb;
-			
-   end
-		
-  else if(j!=k)
-		
-     begin
-			
-   q<=j;
-			
-   qb<=k;
-			
-   end
-		
-  else if(j==1 && k==1)
-		    
-      begin
-			 
-    q<=~q;
-			 
-    qb<=~qb;
-			 
+   begin   
+    if(j==0 && k==0)	  
+     begin		
+   q<=q;		
+   qb<=qb;			
+   end		
+  else if(j!=k)	
+     begin		
+   q<=j;		
+   qb<=k;		
+   end	
+  else if(j==1 && k==1)	    
+      begin		 
+    q<=~q;		 
+    qb<=~qb;		 
     end
-	
  end
-
 end	
-
 endmodule
-
+````
 **RTL LOGIC FOR FLIPFLOPS**
 
 ![Screenshot 2024-10-21 103302](https://github.com/user-attachments/assets/8744a633-3e6f-4010-a195-b3c038c99957)
